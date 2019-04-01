@@ -63,9 +63,13 @@ class App{
         })
 
         //Listener
-        this.app.listen(config.port, function(){
-            console.log('API ouvindo porta ' + config.port)
+        // this.app.listen(config.port, function(){
+        //     console.log('API ouvindo porta ' + config.port)
 
+        // })
+
+        this.app.listen(`${config.port}`, () => {
+            console.log(`API rodando em http://localhost:${config.port}`);
         })
 
     }
