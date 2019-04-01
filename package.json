@@ -1,0 +1,25 @@
+{
+  "name": "loja-ht-api",
+  "version": "1.0.0",
+  "description": "API Loja HT - T23",
+  "main": "App.js",
+  "scripts": {
+    "dev": "nodemon App.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricadeprogramador/t23-modulo2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabricadeprogramador/t23-modulo2/issues"
+  },
+  "homepage": "https://github.com/fabricadeprogramador/t23-modulo2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.16"
+  }
+}
