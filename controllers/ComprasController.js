@@ -17,6 +17,7 @@ class ComprasController{
             let resultado = await Compras.create(req.body)
             res.status(200).json(resultado)
         }catch(error){
+            console.log(error)
             res.status(500).send("Erro ao adicionar Produto")
         }
     }
