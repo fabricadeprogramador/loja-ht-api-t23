@@ -2,27 +2,27 @@
 
 const Mongoose = require('mongoose');
 
-class Compras extends Mongoose.Schema{
+class Compras extends Mongoose.Schema {
 
-    constructor(){
+    constructor() {
         super({
-            Produto:{
-               type:String,
-                required:true
+            produto: [{
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: "Produto",
+                required: true
+            }],
+            valorTotal: {
+                type: Number,
+                required: true
             },
-            ValorTotal:{
-                type:Number,
-                required:true
+            data: {
+                type: String,
+                required: true
             },
-            Data:{
-                type:String,
-                required:true
-            },
-            Pagamento:{
-                type:String,
-                enum: ['CREDITO', 'DEBITO', 'DINHEIRO']
+            pagamento: {
+                type: String,
+                enum: ["CREDITO", "DEBITO", "DINHEIRO"]
             }
-
         });
 
         Mongoose.model('Compras', this);
