@@ -1,6 +1,6 @@
 {
     "development" : {
-        "port" : 3000,
+        "port" : "process.env.PORT || 3000",
         "db" : {
             "name" : "t23-api",
             "url" : "ds131905.mlab.com:31905",
