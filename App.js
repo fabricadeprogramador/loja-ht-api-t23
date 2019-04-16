@@ -13,7 +13,6 @@ const Departamento = require('./models/Departamento')
 const Compras = require('./models/Compras')
 const Carrinho = require('./models/Carrinho')
 const Produto = require('./models/Produto')
-var port = process.env.PORT || 3000
 
 class App{
 
@@ -64,13 +63,9 @@ class App{
         })
 
         //Listener
-        // this.app.listen(config.port, function(){
-        //     console.log('API ouvindo porta ' + config.port)
+        this.app.listen(config.port, function(){
+            console.log('API ouvindo porta ' + config.port)
 
-        // })
-
-        this.app.listen(port, () => {
-            console.log(`API rodando em http://localhost:${port}`);
         })
 
     }
