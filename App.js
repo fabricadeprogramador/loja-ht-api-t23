@@ -64,7 +64,7 @@ class App{
 
         var port = process.env.PORT || 3000
         //Listener
-        this.app.listen(config.port, () => {
+        this.app.listen(port, () => {
             console.log('API ouvindo porta ' + port)
 
         })
