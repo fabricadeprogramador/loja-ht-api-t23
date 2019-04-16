@@ -62,9 +62,10 @@ class App{
             res.send('Seja bem-vindo a API da Loja HT!!')
         })
 
+        var port = process.env.port || config.port
         //Listener
         this.app.listen(config.port, function(){
-            console.log('API ouvindo porta ' + config.port)
+            console.log('API ouvindo porta ' + port)
 
         })
 
