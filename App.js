@@ -62,7 +62,7 @@ class App{
             res.send('Seja bem-vindo a API da Loja HT!!')
         })
 
-        var port = process.env.PORT || config.port
+        var port = process.env.PORT || 3000
         //Listener
         this.app.listen(config.port, () => {
             console.log('API ouvindo porta ' + port)
