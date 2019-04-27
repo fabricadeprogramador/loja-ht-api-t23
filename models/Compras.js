@@ -29,9 +29,7 @@ class Compras extends Mongoose.Schema{
         });
 
         Mongoose.model('Compras', this);
-
     }
-
 }
 
 module.exports = Compras;
