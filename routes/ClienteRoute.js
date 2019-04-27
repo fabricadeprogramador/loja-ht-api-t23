@@ -13,6 +13,9 @@ class ClienteRoute{
         .delete(ClienteController.deletar)
         .put(ClienteController.editar)
 
+        app
+        .route("/clientes/usuario")
+        .post(ClienteController.buscarPorUsuario)
     }
 
 }

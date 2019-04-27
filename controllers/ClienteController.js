@@ -8,7 +8,23 @@ class ClienteController{
     static async buscarTodos(req, res){
         try{
             res.json(await Cliente.find({})
-            .populate('usuario', 'username senha')
+            .populate('usuario', 'username')
+            .exec())
+        
+        }
+        
+        catch(error){
+            res.status(500).send("Erro ao buscar Clientes!")
+        
+        }
+
+    }
+
+    static async buscarPorUsuario(req, res){
+        try{
+            console.log(JSON.stringify(req.body))
+            res.json(await Cliente.find({"usuario":req.body})
+            .populate('usuario', 'username')
             .exec())
         
         }
