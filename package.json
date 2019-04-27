@@ -4,7 +4,7 @@
   "description": "API Loja HT - T23",
   "main": "App.js",
   "scripts": {
-    "dev": "node App.js"
+    "start": "node App.js"
   },
   "repository": {
     "type": "git",
