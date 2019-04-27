@@ -6,23 +6,26 @@ class Compras extends Mongoose.Schema{
 
     constructor(){
         super({
-            Produto:{
-               type:String,
-                required:true
-            },
-            ValorTotal:{
+            produtos:[{
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Produto'
+            }],
+            valorTotal:{
                 type:Number,
                 required:true
             },
-            Data:{
+            data:{
                 type:String,
                 required:true
             },
-            Pagamento:{
+            pagamento:{
                 type:String,
                 enum: ['CREDITO', 'DEBITO', 'DINHEIRO']
+            },
+            cliente: {
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Cliente'
             }
-
         });
 
         Mongoose.model('Compras', this);

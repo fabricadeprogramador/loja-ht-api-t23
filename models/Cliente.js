@@ -6,7 +6,6 @@ class Cliente extends Mongoose.Schema{
 
     constructor(){
         super({
-            
             usuario: {
                 type: Mongoose.Schema.Types.ObjectId,
                 ref: 'Usuario'
@@ -24,18 +23,7 @@ class Cliente extends Mongoose.Schema{
 
             dataNascimento: {
                 type: String
-            },
-
-            carrinho: {
-                type: Mongoose.Schema.Types.ObjectId,
-                ref: 'Carrinho'
-            },
-
-            historico: [{
-                type: Mongoose.Schema.Types.ObjectId,
-                ref: 'Compras'
-            }]
-
+            }
         });
 
         Mongoose.model('Cliente', this)
