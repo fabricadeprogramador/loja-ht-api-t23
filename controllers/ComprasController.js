@@ -13,6 +13,8 @@ class ComprasController {
   }
   static async adicionar(req, res) {
     try {
+
+      console.log("COMPRA PARA SALVAR: " + JSON.stringify(req.body))
       let resultado = await Compras.create(req.body);
       res.status(200).json(resultado);
     } catch (error) {
