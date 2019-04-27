@@ -10,7 +10,7 @@ class ProdutoController{
                 .populate('departamento','nome')
                 .exec())
         } catch (error) {
-            res.error(400).send("Erro ao buscar o Departamento!")
+            res.status(400).send("Erro ao buscar o Departamento!")
         }
     }
 
@@ -21,7 +21,7 @@ class ProdutoController{
                 .populate('departamento', 'nome')
                 .exec())
         } catch (error) {
-            res.error(400).send("Erro ao buscar o Produto!")
+            res.status(400).send("Erro ao buscar o Produto!")
         }
     }
 
@@ -32,7 +32,7 @@ class ProdutoController{
             console.log("Resultado: " + resultado)
             res.status(200).json(resultado)
         } catch (error) {
-            res.error(400).send("Erro ao adicionar o Produto!")
+            res.status(400).send("Erro ao adicionar o Produto!")
         }
     }
 
@@ -41,7 +41,7 @@ class ProdutoController{
             let resultado = await Produto.findByIdAndDelete(req.body)
             res.status(200).json(resultado)
         } catch (error) {
-            res.error(400).send("Erro ao deletar o Produto!")
+            res.status(400).send("Erro ao deletar o Produto!")
         }
     }
 

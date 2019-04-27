@@ -23,11 +23,14 @@ class Produto extends Moongose.Schema {
                 type: String,
                 required: true
             },
-            departamento:[{
+            imagem: {
+                type: String
+            },
+            departamento:{
                 type: Moongose.Schema.Types.ObjectId,
                 ref: 'Departamento',
                 required: true
-            }]        
+            }        
         });
 
         Moongose.model('Produto', this);

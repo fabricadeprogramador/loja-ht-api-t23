@@ -9,9 +9,7 @@ class DepartamentoController {
     static async buscarTodos(req, res) {
 
         try {
-            console.log("Chamou GET Departamentos")
             res.json(await Departamento.find({}))
-            console.log("Chamou GET Departamentos")
 
         } catch (error) {
             console.log(error)
