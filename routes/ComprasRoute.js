@@ -13,11 +13,11 @@ class ComprasRoute {
       .get(ComprasController.buscarPorProduto);
 
     app
-      .route("/compras/produto/:idDepartamento")
+      .route("/compras/departamento/:idDepartamento")
       .get(ComprasController.buscarPorDepartamento);
 
     app
-      .route("/compras/produto/:idCliente")
+      .route("/compras/cliente/:idCliente")
       .get(ComprasController.buscarPorCliente);
   }
 }

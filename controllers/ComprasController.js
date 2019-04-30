@@ -11,6 +11,7 @@ class ComprasController {
       res.status(500).send("Erro ao buscar Lista de produtos");
     }
   }
+
   static async adicionar(req, res) {
     try {
 
@@ -22,6 +23,7 @@ class ComprasController {
       res.status(500).send("Erro ao adicionar Produto");
     }
   }
+  
   static async deletar(req, res) {
     try {
       let deletarid = req.body._id;
