@@ -24,7 +24,7 @@ class ClienteController{
         try{
             console.log(JSON.stringify(req.body))
             res.json(await Cliente.find({"usuario":req.body})
-            .populate('usuario', 'username')
+            .populate('usuario', 'username senha')
             .exec())
         
         }
