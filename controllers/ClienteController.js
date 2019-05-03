@@ -2,6 +2,7 @@
 
 const Mongoose = require('mongoose')
 const Cliente = Mongoose.model('Cliente')
+const Usuario = Mongoose.model('Usuario')
 
 class ClienteController{
 
@@ -65,8 +66,10 @@ class ClienteController{
     static async editar(req, res){
         try{
 
-            console.log("EDIÇÃO: ")
-            console.log("REQUEST BODY: " + JSON.stringify(req.body))
+            if(req.body.usuario._id != undefined && req.body.usuario._id != "" && req.body.usuario._id != null){
+                let resultadoUsu = await Usuario.findByIdAndUpdate(req.body.usuario._id, req.body.usuario)
+                console.log("AO SALVAR USUARIO DE CLIENTE: " + JSON.stringify(resultadoUsu))
+            }
 
             let resultado = (await Cliente.findByIdAndUpdate(req.body._id, req.body))
             res.status(200).send(resultado)
