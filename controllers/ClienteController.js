@@ -67,6 +67,8 @@ class ClienteController{
         try{
 
             if(req.body.usuario._id != undefined && req.body.usuario._id != "" && req.body.usuario._id != null){
+                console.log("REQ.BODY.USUARIO._ID: " + JSON.stringify(eq.body.usuario._id))
+                console.log("REQ.BODY.USUARIO: " + JSON.stringify(eq.body.usuario))
                 let resultadoUsu = await Usuario.findByIdAndUpdate(req.body.usuario._id, req.body.usuario)
                 console.log("AO SALVAR USUARIO DE CLIENTE: " + JSON.stringify(resultadoUsu))
             }
