@@ -67,8 +67,8 @@ class ClienteController{
         try{
 
             if(req.body.usuario._id != undefined && req.body.usuario._id != "" && req.body.usuario._id != null){
-                console.log("REQ.BODY.USUARIO._ID: " + JSON.stringify(eq.body.usuario._id))
-                console.log("REQ.BODY.USUARIO: " + JSON.stringify(eq.body.usuario))
+                console.log("REQ.BODY.USUARIO._ID: " + JSON.stringify(req.body.usuario._id))
+                console.log("REQ.BODY.USUARIO: " + JSON.stringify(req.body.usuario))
                 let resultadoUsu = await Usuario.findByIdAndUpdate(req.body.usuario._id, req.body.usuario)
                 console.log("AO SALVAR USUARIO DE CLIENTE: " + JSON.stringify(resultadoUsu))
             }
@@ -76,7 +76,7 @@ class ClienteController{
             let resultado = (await Cliente.findByIdAndUpdate(req.body._id, req.body))
             res.status(200).send(resultado)
         } catch(error){
-            console.log("ERRO AO EDITAR CONVIDADO: " + error)
+            console.log("ERRO AO EDITAR CLIENTE: " + error)
             res.status(500).send("Erro ao editar cliente")
         }
     }

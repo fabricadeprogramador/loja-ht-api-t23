@@ -50,9 +50,11 @@ class UsuarioController {
 
     static async editar(req, res) {
         try {
+            console.log("EDITANDO USUARIO: " + JSON.stringify(req.body))
             let resultado = await Usuario.findByIdAndUpdate(req.body._id, req.body)
             res.status(200).json(resultado)
         } catch (error) {
+            console.log("ERRO AO EDITAR USUARIO: " + error)
             res.status(500).send("Erro ao editar usuario!")
         }
     }
