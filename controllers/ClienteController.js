@@ -40,7 +40,15 @@ class ClienteController{
     static async adicionar(req, res){
         
         try{
-            let adicionarCliente = await Cliente.create(req.body)
+            let clienteNovo = req.body
+            let usuarioNovo = req.body.usuario
+
+            if(usuarioNovo != undefined && usuarioNovo != null && usuarioNovo != {}){
+                usuarioNovo =  await Usuario.create(usuarioNovo)
+                clienteNovo.usuario = usuarioNovo
+            }
+
+            let adicionarCliente = await Cliente.create(clienteNovo)
             res.status(200).send(adicionarCliente)
         
         }
@@ -67,10 +75,7 @@ class ClienteController{
         try{
 
             if(req.body.usuario._id != undefined && req.body.usuario._id != "" && req.body.usuario._id != null){
-                console.log("REQ.BODY.USUARIO._ID: " + JSON.stringify(req.body.usuario._id))
-                console.log("REQ.BODY.USUARIO: " + JSON.stringify(req.body.usuario))
                 let resultadoUsu = await Usuario.findOneAndUpdate({"_id": req.body.usuario._id}, req.body.usuario)
-                console.log("AO SALVAR USUARIO DE CLIENTE: " + JSON.stringify(resultadoUsu))
             }
 
             let resultado = (await Cliente.findOneAndUpdate({"_id" : req.body}, req.body))
