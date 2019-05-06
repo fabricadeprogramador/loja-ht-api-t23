@@ -19,6 +19,11 @@ class Usuario extends Mongoose.Schema{
                 type: String,
                 enum: ['CLIENTE', 'ADMIN'],
                 required: true
+            },
+            ativo: {
+                type: Boolean,
+                required: true,
+                default: true
             }
 
         });

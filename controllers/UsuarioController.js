@@ -15,9 +15,16 @@ class UsuarioController {
 
     static async autenticar(req, res) {
         try {
-            if (req.body != "")
-                res.json(await Usuario.find(req.body))
-            else {
+            if (req.body != "") {
+                let usuarioRetornado = await Usuario.find(req.body)
+                if(usuarioRetornado.length > 0){
+                    if (usuarioRetornado[0].ativo) {
+                        res.json(await Usuario.find(req.body))
+                    } else {
+                        res.send("Usuário inativado!")
+                    }
+                }
+            } else {
                 res.send("Usuário não informado!")
             }
         } catch (error) {
