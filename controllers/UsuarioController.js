@@ -17,12 +17,14 @@ class UsuarioController {
         try {
             if (req.body != "") {
                 let usuarioRetornado = await Usuario.find(req.body)
-                if(usuarioRetornado.length > 0){
+                if (usuarioRetornado.length > 0) {
                     if (usuarioRetornado[0].ativo) {
                         res.json(await Usuario.find(req.body))
                     } else {
                         res.send("Usuário inativado!")
                     }
+                } else {
+                    res.status(200).send("Usuário ou senha inválidos!")
                 }
             } else {
                 res.send("Usuário não informado!")
