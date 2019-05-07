@@ -75,6 +75,24 @@ class DepartamentoController {
         }
     }
 
+    static async buscarAtivos(req, res) {
+        try {
+            let departamento = {}
+            departamento.ativo=true
+            let resultado = await Departamento.find(departamento)
+            console.log(resultado)
+            res.status(200).send(resultado)
+
+
+        } catch (error) {
+
+            res.status(500).send('Erro ao buscar departamentos ativos')
+
+        }
+    }
+
+    
+
 }
 
 module.exports = DepartamentoController

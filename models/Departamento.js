@@ -19,6 +19,11 @@ class Departamento extends Mongoose.Schema{
                 type:String,
                 required:true
             },
+            ativo:{
+                type: Boolean,
+                required: false,
+                default: true
+            }
 
         });
 
