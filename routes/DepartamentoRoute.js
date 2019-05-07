@@ -15,10 +15,10 @@ class DepartamentoRoute{
         .delete(DepartamentoController.deletar)
         .put(DepartamentoController.editar)
 
-        app.route('/departamentos/:nome')
+        app.route('/departamentos/busca/:nome')
         .get(DepartamentoController.buscarNome)
 
-        app.route('/ativos')
+        app.route('departamentos/ativos')
         .get(DepartamentoController.buscarAtivos)
 
         
