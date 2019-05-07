@@ -18,7 +18,7 @@ class DepartamentoRoute{
         app.route('/departamentos/busca/:nome')
         .get(DepartamentoController.buscarNome)
 
-        app.route('departamentos/ativos')
+        app.route('departamentosativos')
         .get(DepartamentoController.buscarAtivos)
 
         
