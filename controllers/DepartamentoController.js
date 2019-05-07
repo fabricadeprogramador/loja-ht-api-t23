@@ -79,9 +79,9 @@ class DepartamentoController {
         try {
             let departamento = {}
             departamento.ativo = true
-            console.log(departamento)
+            console.log("Departamento buscar "+departamento)
             let resultado = await Departamento.find(departamento)
-            console.log(resultado)
+            console.log("resultado busca departamento "+resultado)
             res.status(200).send(resultado)
 
 
