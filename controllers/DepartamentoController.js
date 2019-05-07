@@ -78,7 +78,8 @@ class DepartamentoController {
     static async buscarAtivos(req, res) {
         try {
             let departamento = {}
-            departamento.ativo=true
+            departamento.ativo = true
+            console.log(departamento)
             let resultado = await Departamento.find(departamento)
             console.log(resultado)
             res.status(200).send(resultado)
