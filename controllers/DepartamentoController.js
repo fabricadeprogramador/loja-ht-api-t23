@@ -74,7 +74,10 @@ class DepartamentoController {
     }
 
     static async buscarAtivos(req, res) {
+        console.log("ENTROU BUSCAR ATIVOS")
+        
         try {
+            console.log("ENTROU TRY")
             res.json(await Departamento.find({"ativo" : true}))
 
         } catch (error) {
