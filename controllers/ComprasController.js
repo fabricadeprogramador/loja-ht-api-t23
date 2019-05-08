@@ -37,10 +37,10 @@ class ComprasController {
 
   static async buscarPorProduto(req, res) {
     try {
-      let idProduto1 = req.params.idProduto;
+      let idProduto = req.params.idProduto;
 
       res.json(
-        await Compras.find({ produto: idProduto1 })
+        await Compras.find({ produtos: idProduto })
           .populate("produto", "id")
           .exec()
       );
